@@ -23,8 +23,8 @@ public class TerrainHover : MonoBehaviour
     // Update is called once per frame
     void Update () 
     {
-		horizontalMovementInput = CrossPlatformInputManager.GetAxis("Horizontal");
-		verticalMovementInput = CrossPlatformInputManager.GetAxis("Vertical");
+	horizontalMovementInput = CrossPlatformInputManager.GetAxis("Horizontal");
+	verticalMovementInput = CrossPlatformInputManager.GetAxis("Vertical");
 
         newPosition = thisTransform.position;
         newPosition += thisTransform.forward * verticalMovementInput * maxSpeed * Time.deltaTime;
@@ -32,17 +32,17 @@ public class TerrainHover : MonoBehaviour
 
         // Raycast from object to floor, verifying the distance from it
         RaycastHit Hit;
-		if(Physics.Raycast(thisTransform.position, -Vector3.up, out Hit))
-		{
+	if(Physics.Raycast(thisTransform.position, -Vector3.up, out Hit))
+	{
             // Set distance from object to ground
             newPosition.y = (Hit.point + Vector3.up * distanceFromGround).y;
-			destinationUpVector = Hit.normal;
-		}
+	    destinationUpVector = Hit.normal;
+	}
 
         // Update position
-		thisTransform.position = newPosition;
+	thisTransform.position = newPosition;
         
         // Update distance from ground
-		thisTransform.up = Vector3.Slerp(thisTransform.up, destinationUpVector, angleSpeed*Time.deltaTime);
-	}
+	thisTransform.up = Vector3.Slerp(thisTransform.up, destinationUpVector, angleSpeed*Time.deltaTime);
+    }
 }
