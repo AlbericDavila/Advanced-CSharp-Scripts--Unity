@@ -11,7 +11,7 @@ public class ProjectVectorPosition : MonoBehaviour
     
     void Awake () 
 	{
-		thisTransform = GetComponent<Transform>();
+	    thisTransform = GetComponent<Transform>();
 	}
 	
 	void Update ()
