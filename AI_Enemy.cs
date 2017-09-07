@@ -36,10 +36,10 @@ public class AI_Enemy : MonoBehaviour
 	}
 	
 	[SerializeField] ENEMY_STATE currentstate = ENEMY_STATE.PATROL;
-    public Health PlayerHealth;                             //Reference to player health	
-    public Transform PatrolDestination;                     //Reference to patrol destination
-    public float MaxDamage = 10f;                           //Damage amount per second
-    private LineSight ThisLineSight;                        //Reference to line of sight component
+        public Health PlayerHealth;                             //Reference to player health	
+        public Transform PatrolDestination;                     //Reference to patrol destination
+        public float MaxDamage = 10f;                           //Damage amount per second
+        private LineSight ThisLineSight;                        //Reference to line of sight component
 	private UnityEngine.AI.NavMeshAgent ThisAgent;          //Reference to nav mesh agent
 	private Transform ThisTransform;                        //Reference to transform	
 	private Transform PlayerTransform;
